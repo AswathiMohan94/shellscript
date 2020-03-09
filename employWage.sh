@@ -1,7 +1,6 @@
 #!/bin/bash -x
 echo "welcome"
 isPresent=1;
-isAbsent=2;
 WagePerHr=20;
 empCheck=$((RANDOM%2));
 if [ $isPresent -eq $empCheck ]
