@@ -1,0 +1,35 @@
+#!/bin/bash -x
+read -p " enter a ,b,c : " a b c;
+fst=$(($a+$b*$c))
+echo "result of a+b*c = "$fst
+secnd= $(($a%$b+$c))
+echo "result of a%b+c = "$secnd
+thrd= $(($c+$a/$b))
+echo "result of c+a/b = " $thrd
+frth=$(($a*$b+$c))
+echo "the result of c+a/b = "$frth
+if [ ($fst>$secnd)&&($fst>$thrd)&&($fst>$frth) ]
+then
+	echo "a+b*c is max " $fst
+elif [ ($secnd>$fst)&&($secnd>$thrd)&&($secnd>$frth) ]
+then
+	echo "a%b+c is max " $secnd
+elif [ ($thrd>$fst)&&($thrd>$secnd)&&($thrd>$frth) ]
+then
+	echo "c+a/b is max " $thrd
+elif [ ($frth>$fst)&&($frth>$secnd)&&($frth>$thrd) ]
+then
+	echo "a*b+c is max " $frth
+elif [ ($fst<$secnd)&&($fst<$thrd)&&($fst<$frth) ]
+then
+	echo "a+b*c is min " $fst
+elif [ ($secnd<$fst)&&($secnd<$thrd)&&($secnd<$frth) ]
+then
+	echo "a%b+c is min "$secnd
+elif [ ($thrd<$fst)&&($thrd<$secnd)&&($thrd<$frth) ]
+then
+	echo "c+a/b is the min "$thrd
+elif [ ($frth<$fst)&&($frth<$secnd)&&($frth<$thrd) ]
+then
+	echo "a*b+c is min "$frth
+fi
